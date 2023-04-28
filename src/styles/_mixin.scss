@@ -1,0 +1,104 @@
+@mixin ghost {
+  &:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+  }  
+}
+
+@mixin btnFill {
+  cursor: pointer;
+  padding: 13px 20px;
+  box-sizing: border-box;
+  font-family: Roboto, Arial, Helvetica, san-serif;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 19px;
+  // outline: 3px solid $color-orange-primary;
+  background-color: $color-orange-primary;
+
+  color: #FFFFFF;
+
+  transition-property: outline-color, background-color;
+  transition: 0.3s ease;
+  &:focus-visible {
+    outline-color: $color-orange-active;
+    background-color: $color-orange-primary;
+  }
+  &:hover {
+    outline-color: $color-orange-focus;
+    background-color: $color-orange-focus;
+  }
+  &:active {
+    outline-color: $color-orange-active;
+    background-color: $color-orange-active;
+  }
+}
+
+@mixin btnStroke {
+  cursor: pointer;
+  padding: 13px 20px;
+  font-family: Roboto, Arial, Helvetica, san-serif;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 19px;
+  background-color: transparent;
+  border: 3px solid $color-orange-primary;
+
+  color: #FFFFFF;
+
+  transition-property: outline-color, background-color;
+  transition: 0.3s ease;
+  &:focus-visible {
+    outline-color: $color-orange-primary;
+    background-color: $color-orange-active;
+  }
+  &:hover {
+    outline-color: $color-orange-hover;
+    background-color: $color-orange-hover;
+  }
+  &:active {
+    outline-color: $color-orange-active;
+    background-color: $color-orange-active;
+  }
+}
+
+@mixin list-reset {
+  padding: 0;
+  list-style: none;
+}
+
+@mixin formEffects {
+  transition-property: outline-color, color;
+  transition: 0.3s ease;
+  &:focus,
+  &:focus-visible {
+    outline: 1px solid $color-orange-primary;    
+  }
+  &:hover::placeholder {
+    outline: none;
+    color: $color-orange-primary;
+  }
+  &:active {
+    outline: 0;
+  }
+}
+
+@mixin error {
+  position: relative;
+  &:before {
+    content: "Недопустимый формат";
+    position: absolute;
+    width: 100%;
+    font-family: Roboto, Arial, Helvetica, san-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 9px;
+    line-height: 11px;
+  }
+}
